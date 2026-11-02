@@ -24,9 +24,9 @@ async function setup() {
   // Guarda a posição original de cada página
   let colunas = 30;
   let espacamentoX = 29;
-  let espacamentoY = 39;
+  let espacamentoY = 34;
   let inicioX = 75;
-  let inicioY = 170;
+ let inicioY = 210;
 
   for (let i = 0; i < dados.length; i++) {
     let linha = Math.floor(i / colunas);
@@ -48,19 +48,23 @@ async function setup() {
 }
 
 function draw() {
-  background('#E8DDC8');
+ background('#302923');
 
-  // Título
+     // Título
   noStroke();
-  fill('#29231F');
-  textSize(38);
-  text('Cartografia de uma presença', 60, 65);
+  fill('#E8DDC8');
+  textFont('Georgia');
+  textStyle(NORMAL);
+  textSize(36);
+  text('Cartografia de uma presença', 60, 75);
 
-  // Subtítulo
+    // Subtítulo
   fill('#75685B');
-  textSize(15);
-  text('Uma cartografia visual de Cartas a uma negra', 60, 95);
-
+  textFont('Arial');
+  textStyle(NORMAL);
+  textSize(16);
+  text('Uma leitura visual de Cartas a uma negra, de Françoise Ega.', 60, 108);
+   
   // Pontos animados
   for (let ponto of pontos) {
     let movimento = sin(
@@ -86,27 +90,32 @@ function draw() {
     );
   }
 
-  // Legenda
+    // Legenda
   noStroke();
 
-  fill('#A34F35');
-  circle(68, 586, 9);
+  // Páginas com ocorrências
+  fill('#C97859');
+  circle(68, 580, 10);
 
-  fill('#75685B');
+  fill('#E8DDC8');
+  textFont('Arial');
   textSize(13);
-  text('Páginas com ocorrências', 82, 590);
+  textStyle(NORMAL);
+  text('Páginas em que o nome Carolina foi identificado.', 85, 584);
 
+  // Páginas sem ocorrências
+  fill('#A99B88');
+  circle(68, 610, 10);
+
+  fill('#E8DDC8');
+  text('Páginas sem ocorrências identificadas.', 85, 614);
+
+  // Explicação do tamanho dos pontos
   fill('#C9BBA5');
-  circle(288, 586, 9);
+  textSize(12);
+  text('O tamanho dos pontos varia conforme a quantidade de ocorrências em cada página.', 60, 640);
 
-  fill('#75685B');
-  text('Páginas sem ocorrências', 302, 590);
-
-  // Totalizadores
-  fill('#29231F');
-  textSize(17);
-  text('293 páginas analisadas', 60, 640);
-  text('165 ocorrências de Carolina', 60, 670);
+  
 
   // Página selecionada
   if (selecionado !== null) {
@@ -115,7 +124,7 @@ function draw() {
     ) * 8;
 
     noStroke();
-    fill('#29231F');
+    fill('#E8DDC8');
     textSize(17);
 
     text(
@@ -137,7 +146,21 @@ function draw() {
       23
     );
   }
+
+  // Orientação de interação
+  noStroke();
+  fill('#C9BBA5');
+  textFont('Arial');
+  textSize(12);
+  text('Clique em um ponto para consultar a página e a quantidade de ocorrências identificadas.', 60, 665);
+
+  // Assinatura
+  fill('#A99B88');
+  textSize(12);
+  text('Daiane Menezes · 2026', 60, 690);
+
 }
+
 
 function mousePressed() {
   let maisProximo = null;
@@ -165,3 +188,4 @@ function mousePressed() {
     selecionado = maisProximo;
   }
 }
+
