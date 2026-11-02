@@ -30,4 +30,4 @@ JavaScript · p5.js · CSV · OCR · GitHub Pages
 
 ### Visualização interativa
 
-[Acesse Cartografia de uma presença](https://daianedatascience.github.io/cartografia-de-uma-presenca/)/daianedatascience.github.io/cartografia-de-uma-presenca/?utm_source=chatgpt.com)
+[Visualizar projeto](https://daianedatascience.github.io/cartografia-de-uma-presenca/)
