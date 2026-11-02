@@ -188,4 +188,3 @@ function mousePressed() {
     selecionado = maisProximo;
   }
 }
-
